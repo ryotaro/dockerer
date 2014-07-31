@@ -15,7 +15,7 @@ else
 end
 
 # Install required gems.
-%w(serverspec test-kitchen kitchen-docker).each do |pkg|
+%w(serverspec test-kitchen kitchen-docker kitchen-vagrant knife-solo).each do |pkg|
   gem_package pkg do
     gem_binary '/opt/chef/embedded/bin/gem'
   end
