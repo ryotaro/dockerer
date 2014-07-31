@@ -8,6 +8,15 @@ group "docker" do
   members ["vagrant"]
 end
 
+# Change group for gem dir.
+bash "gems dir attributes change" do
+  user "root"
+  code <<-EOC
+  chgrp -R docker /opt/chef/embedded/lib/ruby/gems
+  chmod -R 775 /opt/chef/embedded/lib/ruby/gems
+  EOC
+end
+
 if node["platform"] == "centos" then
   include_recipe "bootstrap::centos_docker"
 else
