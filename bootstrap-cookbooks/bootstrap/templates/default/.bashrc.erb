@@ -1,0 +1,12 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# User specific aliases and functions
+# Add PATH to Chef-embedded binaries.
+export PATH="$PATH:/opt/chef/embedded/bin"
+# Add DOCKER_HOST.
+export DOCKER_HOST="unix:///var/run/docker.sock"
